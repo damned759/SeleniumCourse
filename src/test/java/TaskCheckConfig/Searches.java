@@ -20,6 +20,7 @@ public class Searches {
 
     @AfterEach
     public void driverQuit(){
+
         driver.quit();
     }
 
