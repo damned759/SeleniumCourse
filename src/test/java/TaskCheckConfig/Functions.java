@@ -23,6 +23,7 @@ public class Functions {
 
     @AfterEach
     public void driverQuit(){
+
         driver.quit();
     }
 
@@ -171,14 +172,16 @@ public class Functions {
         }
 
         String value = email.getAttribute("value");
-        if (value.length() > 0){
-            System.out.println("'Email' field is already filled.");
+        System.out.print("'Email' field value: " + value);
+        if (value.equals("cba111@gmail.com")){
+            System.out.println(" 'Email' field is already filled.");
         }else{
             System.out.print("'Email' field: ");
-            System.out.println("element is displayed.");
+            System.out.println("element is not filled.");
             System.out.print("Enter email---------> ");
             email.sendKeys("cba111@gmail.com");
             System.out.println("email entered.");
+            System.out.print("'Email' field value: " + value);
         }
 
         if(password.isEnabled()) {
