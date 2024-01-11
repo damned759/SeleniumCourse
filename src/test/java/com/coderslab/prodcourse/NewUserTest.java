@@ -1,11 +1,8 @@
 package com.coderslab.prodcourse;
 
-//import org.junit.jupiter.api.Test;
 import org.testng.annotations.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-public class ProgressBarTest extends BaseTest {
+public class NewUserTest extends BaseTest {
     CreateAccountPage createAccountPage = new CreateAccountPage();
     SignInPage signInPage = new SignInPage();
     YourAddressesPage yourAddressesPage = new YourAddressesPage();
@@ -13,8 +10,8 @@ public class ProgressBarTest extends BaseTest {
 
 
     //ZADANIEDOMOWE6
-    @Test(invocationCount = 2)
-    public void testCreateNewAccountZadanie6(){
+    @Test(invocationCount = 1)
+    public void testCreateNewAccount(){
         homePage.clickSignInPageButton();
         signInPage.clickCreateAccountButton();
         createAccountPage.clickGender();
@@ -24,7 +21,9 @@ public class ProgressBarTest extends BaseTest {
         createAccountPage.fillPassword();
         createAccountPage.checkedConsentFields();
         createAccountPage.clickSaveCreateAccountForm();
-        homePage.clickAdressesButton();
+        homePage.isUserLoggedIn();
+        homePage.checkLoggedUsername();
+        homePage.clickAddressesButton();
         yourAddressesPage.clickNewAddressButton();
         newAddressPage.fillStreetField();
         newAddressPage.fillCityField();
@@ -32,5 +31,4 @@ public class ProgressBarTest extends BaseTest {
         newAddressPage.clickSaveButton();
         homePage.clickSignOutPageButton();
     }
-
 }

@@ -12,7 +12,7 @@ public class BaseTest {
     private WebDriver driver;
     protected BasePage basePage;
     protected HomePage homePage;
-    private final String AUT_URL = "https://mystore-testlab.coderslab.pl/index.php";
+    private final String AUT_URL = "https://prod-course.coderslab.com/index.php";
 
     @BeforeClass
     public void setUp(){
@@ -22,11 +22,11 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown(){
-        driver.quit();
+        //driver.quit();
     }
 
     @BeforeMethod
-    public void loadAplication(){
+    public void loadApplication(){
         driver.get(AUT_URL);
         basePage = new BasePage();
         basePage.setDriver(driver);

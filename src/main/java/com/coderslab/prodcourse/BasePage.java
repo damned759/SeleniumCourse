@@ -28,9 +28,14 @@ public class BasePage {
         find(locator).sendKeys(text);
     }
 
-    protected String getText(By locator){
+    protected String printText(By locator){
         String text = find(locator).getText();
         System.out.println("Text: " + text);
+        return text;
+    }
+
+    protected String getText(By locator){
+        String text = find(locator).getText();
         return text;
     }
 
