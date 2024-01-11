@@ -26,11 +26,16 @@ public class CreateAccountPage extends BasePage {
     }
 
     public void fillEmail(){
-        type(emailField, generateRandomEmail());
+        String randomemail = generateRandomEmail();
+        System.out.println("NEW USER---------------------->");
+        System.out.println("Email address: " + randomemail);
+        type(emailField, randomemail);
     }
 
     public void fillPassword(){
-        type(passwordField, generateRandomPassword());
+        String randompassword = generateRandomPassword();
+        System.out.println("Password: " + randompassword);
+        type(passwordField, randompassword);
     }
 
     public void fillName(){
@@ -40,6 +45,21 @@ public class CreateAccountPage extends BasePage {
     public void fillSurname(){
         type(surname, generateRandomSurname());
     }
+
+    public void clickGender(){
+        String gender = generateRandomGender();
+        if (gender.equals("Male")){
+            click(mrOption);
+        } else {
+            click(mrsOption);
+        }
+    }
+
+    public void checkedConsentFields(){
+        click(customerDataPrivacy);
+        click(iAgreeTo);
+    }
+
 
     private String generateRandomName(){
         return firstnames[new Random().nextInt(firstnames.length)];
@@ -61,19 +81,6 @@ public class CreateAccountPage extends BasePage {
         return genders[new Random().nextInt(genders.length)];
     }
 
-    public void clickGender(){
-        String gender = generateRandomGender();
-        if (gender.equals("Male")){
-            click(mrOption);
-        } else {
-            click(mrsOption);
-        }
-    }
-
-    public void checkedConsentFields(){
-        click(customerDataPrivacy);
-        click(iAgreeTo);
-    }
 
     String genders[] = {"Male", "Female"};
 

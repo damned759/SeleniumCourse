@@ -8,6 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ProgressBarTest extends BaseTest {
     CreateAccountPage createAccountPage = new CreateAccountPage();
     SignInPage signInPage = new SignInPage();
+    YourAddressesPage yourAddressesPage = new YourAddressesPage();
+    NewAddressPage newAddressPage = new NewAddressPage();
 
 
     //ZADANIEDOMOWE6
@@ -22,6 +24,12 @@ public class ProgressBarTest extends BaseTest {
         createAccountPage.fillPassword();
         createAccountPage.checkedConsentFields();
         createAccountPage.clickSaveCreateAccountForm();
+        homePage.clickAdressesButton();
+        yourAddressesPage.clickNewAddressButton();
+        newAddressPage.fillStreetField();
+        newAddressPage.fillCityField();
+        newAddressPage.fillZipCodeField();
+        newAddressPage.clickSaveButton();
         homePage.clickSignOutPageButton();
     }
 

@@ -6,9 +6,11 @@ public class HomePage extends BasePage {
 
     private By signInPageButton =
             By.xpath("//span[text()='Sign in']");
-
     private By signOutPageButton =
             By.xpath("//*[@id=\'_desktop_user_info\']/div/a[1]");
+    private By adressesButton =
+            By.xpath("//*[@id=\'footer_account_list\']/li[4]/a");
+
 
     public SignInPage clickSignInPageButton(){
         click(signInPageButton);
@@ -17,6 +19,10 @@ public class HomePage extends BasePage {
 
     public void clickSignOutPageButton(){
         click(signOutPageButton);
+    }
+
+    public void clickAdressesButton(){
+        click(adressesButton);
     }
 
 
