@@ -5,9 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class BasePage {
-    //function:
-    //to have common methods for all
-    //of the page object classes
 
     public static WebDriver driver;
     public void setDriver(WebDriver driver){
@@ -36,18 +33,6 @@ public class BasePage {
         System.out.println("Text: " + text);
         return text;
     }
-
-    /*
-    protected void input(By locator){
-        find(locator).sendKeys();
-    }
-     */
-
-
-
-
-
-
 
 
 

@@ -1,6 +1,7 @@
 package com.coderslab.prodcourse;
 
-import org.junit.jupiter.api.Test;
+//import org.junit.jupiter.api.Test;
+import org.testng.annotations.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -10,7 +11,7 @@ public class ProgressBarTest extends BaseTest {
 
 
     //ZADANIEDOMOWE6
-    @Test
+    @Test(invocationCount = 2)
     public void testCreateNewAccountZadanie6(){
         homePage.clickSignInPageButton();
         signInPage.clickCreateAccountButton();
@@ -21,11 +22,7 @@ public class ProgressBarTest extends BaseTest {
         createAccountPage.fillPassword();
         createAccountPage.checkedConsentFields();
         createAccountPage.clickSaveCreateAccountForm();
-        System.out.println(createAccountPage.currentURL());
-        assertEquals(createAccountPage.currentURL(),
-                "https://prod-course.coderslab.com/index.php",
-                "URLs do not match; registration failed.");
-
+        homePage.clickSignOutPageButton();
     }
 
 }

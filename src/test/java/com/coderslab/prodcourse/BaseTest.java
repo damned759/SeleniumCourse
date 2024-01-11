@@ -1,8 +1,8 @@
 package com.coderslab.prodcourse;
 
-import com.coderslab.prodcourse.BasePage;
-import com.coderslab.prodcourse.HomePage;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.TestInstance;
+import org.testng.annotations.*;
+import org.junit.jupiter.api.TestInstance;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS) //to make BeforeEach non-static
@@ -14,18 +14,18 @@ public class BaseTest {
     protected HomePage homePage;
     private final String AUT_URL = "https://mystore-testlab.coderslab.pl/index.php";
 
-    @BeforeAll
+    @BeforeClass
     public void setUp(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
-    @AfterAll
+    @AfterClass
     public void tearDown(){
         //driver.quit();
     }
 
-    @BeforeEach
+    @BeforeMethod
     public void loadAplication(){
         driver.get(AUT_URL);
         basePage = new BasePage();
